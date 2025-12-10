@@ -29,7 +29,7 @@ size_t	ft_strlen(const char *s)
 char	*ft_update_stash(char *buf, char *stash, int bytesread)
 {
 	if (bytesread < 0)
-		return (NULL);
+		return (free(stash), NULL);
 	if (bytesread == 0)
 		return (stash);
 	buf[bytesread] = '\0';

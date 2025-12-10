@@ -64,7 +64,7 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 	s2len = ft_strlen(s2);
 	result = malloc((s1len + s2len) * sizeof(char) + 1);
 	if (!result)
-		return (NULL);
+		return (free(s1), NULL);
 	ft_memmove(result, s1, s1len);
 	ft_memmove(&result[s1len], s2, s2len);
 	result[s1len + s2len] = '\0';
@@ -112,7 +112,7 @@ char	*ft_extract_stash_rest(char *stash, int nl_pos)
 		return (free (stash), NULL);
 	new_stash = malloc(sizeof(char) * (len + 1));
 	if (!new_stash)
-		return (NULL);
+		return (free(stash), NULL);
 	i = 0;
 	while (i < len)
 	{
